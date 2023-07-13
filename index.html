@@ -14,25 +14,46 @@
     /* Hint: What can you do with a media query and flexbox? */
     .pricing-container{
       display: flex;
-      align-items: center;
       justify-content: center;
-      gap: 2rem;
-      flex-direction: column;
+      align-items: center;
+      /* flex-direction: column; */
       height: 100vh;
+      gap: 2rem;
     }
 
+    /* we did not use border radius here
+    neither the max-width 
+    nor flex:1*/
     .pricing-plan{
+     flex: 1; 
       background-color: #f6f5f4;
+      max-width: 400px;
       text-align: center;
-      width: 20em;
-      padding-top: 1em;
-      padding-bottom: 1em;
+      padding: 20px;
+      border-radius: 5px;
+    }
+
+    .plan-title{
+      font-weight: 1000;
+      font-size: x-large;
+    }
+
+    /* we used margin only instead of margin-bottom */
+    .plan-price{
+      font-size: 2.5rem;
+      font-weight: bolder;
+      margin-bottom: 10px;
     }
 
     .plan-features{
-      list-style-type: none;
-      text-align: center;
+      list-style: none;
+      /* text-align: center; */
       padding: 0;
+      margin: 0;
+    }
+
+    .plan-features li{
+      margin-bottom: 20px;
     }
 
     .plan-button{
@@ -42,21 +63,14 @@
       color: white;
       height: 2rem;
       font-size: 1em;
+      /* padding: 10px; */
     }
-    .plan-title{
-      font-weight: 1000;
-      font-size: x-large;
-    }
-
-    .plan-price{
-      font-size: 2.5rem;
-      font-weight: bolder;
-    }
-
-    @media (min-width: 1250px) {
+   
+   /* we used min-width */
+    @media (max-width: 1250px) {
       .pricing-container{
-        flex-direction: row;
-        /* width : 100%; */
+        flex-direction: column;
+        height : 100%;
       }
     }
   </style>
